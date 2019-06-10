@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 50px;
+
+
+  .App-logo {
+    display: block;
+    margin: auto;
+    font-size: 70px;
+  }
+}
+
+.App-form {
+  width: 100%;
+
+  form {
+    margin-top: 50px;
+
+    input {
+      background: transparent;
+      border-color: #8e8f8e;
+      border-style: solid;
+      border-width: 0 0 2px 0;
+      outline: none;
+      color: #fff;
+      padding: 10px 5px;
+      font-size: 19px;
+      width: 30%;
+      transition: border-bottom-color .5s;
+
+    }
+    form input:focus, form input:active {
+      border-bottom-color: #fff;
+      transition: border-bottom-color .5s;
+
+    }
+    button {
+      display: block;
+      padding: 12px 30px;
+      background-color: white;
+      color: #2a2a4b;
+      border: 1px solid #fff;
+      cursor: pointer;
+      margin: 15px auto 0 auto;
+      border-radius: 30px;
+      font-size: 18px;
+      transition: all .3s;
+    }
+
+    button:hover {
+      border: 1px solid #fff;
+      color: #fff;
+      background: transparent;
+      transition: all .3s;
+    }
+  }
+}
+
+.App-response-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+
+  .repo-block {
+    width: 50%;
+    .repo {
+      padding: 30px 20px;
+      background: #fff;
+      border-radius: 10px;
+      margin: 15px;
+      text-align: left;
+      color: #282c34;
+
+      a {
+        color: #282c34;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .description {
+        font-size: 12px;
+        margin: 10px 0 0;
+      }
+    }
+  }
+}
