@@ -18,7 +18,9 @@
       &:focus, &:active {
         border-bottom-color: #fff;
         transition: border-bottom-color .5s;
-
+      }
+      @media (max-width: 767px) {
+        width: 60%;
       }
     }
 
