@@ -12,7 +12,7 @@
   }
   .App-logo {
     display: block;
-    margin: auto;
+    margin: 50px auto 0;
     font-size: 70px;
   }
 }
@@ -21,7 +21,6 @@
   width: 100%;
 
   form {
-    margin-top: 50px;
 
     input {
       background: transparent;
@@ -62,12 +61,20 @@
       }
     }
   }
+  .results {
+    margin: 30px 15px;
+    h3 {
+      margin: 0;
+      font-size: 25px;
+      text-align: left;
+    }
+  }
 }
 
 .App-response-list {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin: 30px 0;
 
   .repo-block {
     width: 50%;
