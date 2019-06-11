@@ -6,7 +6,8 @@
     width: 100%;
   }
   .repo {
-    padding: 30px 20px;
+    position: relative;
+    padding: 30px 100px 30px 20px;
     background: #fff;
     border-radius: 10px;
     margin: 15px;
@@ -25,6 +26,23 @@
     .description {
       font-size: 12px;
       margin: 10px 0 0;
+    }
+    .score {
+      position: absolute;
+      font-size: 12px;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      margin: 0;
+
+      @media (max-width: 767px) {
+        position: initial;
+        transform: none;
+        margin-top: 10px;
+      }
+      svg {
+        margin-right: 5px;
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import TweenMax from 'gsap';
 import './Repos.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Repos extends React.Component {
 
@@ -18,6 +19,11 @@ class Repos extends React.Component {
                     <p className="description">
                         { this.props.description }
                     </p>
+                    <p className="score">
+                        <FontAwesomeIcon icon="star" />
+                        { this.props.score }
+                    </p>
+
                 </div>
             </div>
         );

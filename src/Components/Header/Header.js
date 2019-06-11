@@ -1,8 +1,8 @@
 import React from 'react';
 import './Header.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index'
-import { faGithub } from '@fortawesome/free-brands-svg-icons/index'
 import TweenMax from 'gsap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class Header extends React.Component {
 
@@ -15,7 +15,7 @@ class Header extends React.Component {
         return (
         <header className="App-header">
             <div className="header-icon" ref={div => this.headerIcon = div}>
-            <FontAwesomeIcon icon={faGithub} className="App-logo" alt="logo"/>
+            <FontAwesomeIcon  icon={['fab', 'github']} className="App-logo" alt="logo"/>
             </div>
             <h1 ref={div => this.headerTitle = div}>
                 Want to find some repositories ?

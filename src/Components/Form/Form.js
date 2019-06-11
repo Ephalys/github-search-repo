@@ -24,7 +24,6 @@ class Form extends React.Component {
         fetch(apiUrl)
             .then(blob => blob.json())
             .then(response => {
-                console.log(response);
                 this.setState({ repositories: {search: this.state.value, data: response.items}, loading: false });
             });
         event.preventDefault();
@@ -51,7 +50,7 @@ class Form extends React.Component {
                 <div className="App-response-list">
                     { (repositories && !loading) && repositories.data.map(
                         ( item, index ) => (
-                            <Repos itemKey = {index} key = {index} fullname={ item.full_name } url = { item.html_url } description = { item.description } ref={div => this.myElements[index] = div}/>
+                            <Repos itemKey = {index} key = {index} fullname={ item.full_name } url = { item.html_url } description = { item.description } score = { item.stargazers_count } ref={div => this.myElements[index] = div}/>
                         )
                     )
                     }
