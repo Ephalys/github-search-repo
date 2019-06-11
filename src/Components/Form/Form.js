@@ -1,6 +1,8 @@
 import React from 'react';
-import Repos from './Repos';
-import {TweenMax} from "gsap";
+import Repos from '../Repos/Repos';
+import './Form.scss';
+import CustomLoader from '../CustomLoader/CustomLoader';
+import TweenMax from 'gsap';
 
 class Form extends React.Component {
 
@@ -23,33 +25,36 @@ class Form extends React.Component {
             .then(blob => blob.json())
             .then(response => {
                 console.log(response);
-                this.setState({ repositories: response.items, loading: false });
+                this.setState({ repositories: {search: this.state.value, data: response.items}, loading: false });
             });
         event.preventDefault();
     }
 
     render() {
-        const {repositories, loading, value} = this.state
+        const {repositories, loading, value} = this.state;
         return(
             <div className="App-form">
                 <form>
                     <input value={value} onChange={(event)=>this.setState({value: event.target.value})} type="text" ref={(input) => { this.formInput = input; }}/>
                     <button onClick={this.onClick.bind(this)} ref={div => this.formSubmit = div}>Search</button>
                 </form>
-                {loading && 'Loading...'}
+                {loading && <CustomLoader /> }
 
-                {repositories && (
+                {(repositories && !loading) && (
                     <div className="results">
                         <h3>
-                            {repositories.length} results for "{value}"
+                            {repositories.data.length} results for "{repositories.search}"
                         </h3>
                     </div>
                 )}
 
                 <div className="App-response-list">
-                    { repositories && repositories.map( ( item, index ) => (
-                        <Repos itemKey = {index} key = {index} fullname={ item.full_name } url = { item.html_url } description = { item.description } ref={div => this.myElements[index] = div}/>
-                    )) }
+                    { (repositories && !loading) && repositories.data.map(
+                        ( item, index ) => (
+                            <Repos itemKey = {index} key = {index} fullname={ item.full_name } url = { item.html_url } description = { item.description } ref={div => this.myElements[index] = div}/>
+                        )
+                    )
+                    }
                 </div>
             </div>
         );

@@ -1,7 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import {TweenMax} from 'gsap'
+import './Header.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index'
+import { faGithub } from '@fortawesome/free-brands-svg-icons/index'
+import TweenMax from 'gsap'
 
 class Header extends React.Component {
 

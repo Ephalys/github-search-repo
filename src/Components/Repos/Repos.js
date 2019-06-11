@@ -1,5 +1,6 @@
 import React from 'react';
-import {TweenMax} from "gsap";
+import TweenMax from 'gsap';
+import './Repos.scss';
 
 class Repos extends React.Component {
 
